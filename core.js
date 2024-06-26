@@ -16,7 +16,7 @@ export function newConnection(connection) {
     console.log(`Connection ${connection.name} created`);
 
     // Write the updated JSON data back to the file
-    writeFile(filePath, jsonData, { spaces: 2 }, (err) => {
+    writeFile(filePath, jsonData, { spaces: 2, flag: 'a+' }, (err) => {
       if (err) {
         console.error("Error writing file:", err);
         return;
