@@ -3,8 +3,7 @@
 import yargs from 'yargs/yargs';
 
 import { hideBin } from 'yargs/helpers';
-import { Client } from 'ssh2';
-import { newConnection, promptBuilder } from './core.js';
+import { connect, newConnection, promptBuilder } from './core.js';
 import inquirer  from "inquirer";
 
 const argv = yargs(hideBin(process.argv))
@@ -22,9 +21,17 @@ const argv = yargs(hideBin(process.argv))
         newConnection({
             name: argv.name,
             host: answer.host,
-            user: answer.user,
+            username: answer.user,
             password: answer.password
         })
+    })
+    .command('connect <name>', 'Connect to server', (yargs) => {
+        yargs.positional('name', {
+            type: 'string',
+            describe: 'Connection name'
+        });
+    }, (argv) => {
+        connect(argv.name);    
     })
     .demandCommand()
     .help()
