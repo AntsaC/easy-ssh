@@ -80,6 +80,17 @@ export function findAll() {
   })
 }
 
+export async function deleteServer(name) {
+  let data = await findAll();
+  data = data.filter(server => server.name != name);
+  writeFile(filePath, data, { spaces: 2 }, (err) => {
+    if (err) {
+      console.error("Error writing file:", err);
+      return;
+    }
+  });
+}
+
 export function promptBuilder(name, message) {
   return {
     type: "input",

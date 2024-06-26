@@ -3,7 +3,7 @@
 import yargs from 'yargs/yargs';
 
 import { hideBin } from 'yargs/helpers';
-import { connect, findAll, newConnection, promptBuilder } from './core.js';
+import { connect, deleteServer, findAll, newConnection, promptBuilder } from './core.js';
 import inquirer  from "inquirer";
 
 const argv = yargs(hideBin(process.argv))
@@ -35,6 +35,14 @@ const argv = yargs(hideBin(process.argv))
     })
     .command('list', 'List all', (yargs) => {}, async (argv) => {
         console.log(await findAll()); 
+    })
+    .command('delete <name>', 'Delete a server', (yargs) => {
+        yargs.positional('name', {
+            type: 'string',
+            describe: 'Connection name'
+        });
+    }, (argv) => {
+        deleteServer(argv.name);    
     })
     .demandCommand()
     .help()
