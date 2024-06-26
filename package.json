@@ -1,11 +1,14 @@
 {
   "name": "antsa-easy-ssh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "easy-ssh.js",
   "author": "Antsa Fiderana",
   "license": "MIT",
   "description": "An easy reusable SSH client",
   "type": "module",
+  "bin": {
+    "easy-ssh": "./easy-ssh.js"
+  },
   "dependencies": {
     "inquirer": "^9.2.23",
     "jsonfile": "^6.1.0",
