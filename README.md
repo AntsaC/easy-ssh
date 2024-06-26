@@ -9,11 +9,14 @@ npm i -g easy-ssh
 ## Simple usage
 ### Create new connection 
 ```
-easy-ssh new <name>
+easy-ssh new example
+? Enter host :
+? Enter user :
+? Enter password :
 ```
 ### Connect to ssh 
 ```
-easy-ssh connect <name>
+easy-ssh connect example
 ```
 ### List all connection 
 ```
