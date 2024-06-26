@@ -4,7 +4,7 @@ This is a simple and reusable ssh client cli based on ``yargs`` and ``ssh2``
 - Node --v.10.16.0 or newer
 ## Installation
 ```
-npm i -g easy-ssh
+npm i -g antsa-easy-ssh
 ```
 ## Simple usage
 ### Create new connection 
