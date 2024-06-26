@@ -12,5 +12,6 @@
     "ssh2": "^1.15.0",
     "yargs": "^17.7.2"
   },
-  "keywords": ["ssh","cli","easy","reusable"]
+  "keywords": ["ssh","cli","easy","reusable"],
+  "private": "false"
 }
