@@ -1,6 +1,6 @@
 {
   "name": "antsa-easy-ssh",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "main": "easy-ssh.js",
   "author": "Antsa Fiderana",
   "license": "MIT",

@@ -1,8 +1,11 @@
 import pkg from "jsonfile";
 const { readFile, writeFile } = pkg;
 import { Client } from "ssh2";
-
-const filePath = "./data.json";
+import path from "path";
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const filePath = path.join(__dirname, "data.json");
 
 export function newConnection(connection) {
   readFile(filePath, (err, jsonData) => {
@@ -27,6 +30,11 @@ export function newConnection(connection) {
 
 function findServerByName(name, jsonData) {
   return jsonData.find((server) => server.name === name);
+}
+
+export async function checkIfExist(name) {
+  const data = await findAll();
+  return !!findServerByName(name, data);
 }
 
 export function connect(name) {
