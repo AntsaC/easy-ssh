@@ -3,7 +3,7 @@
 import yargs from 'yargs/yargs';
 
 import { hideBin } from 'yargs/helpers';
-import { connect, newConnection, promptBuilder } from './core.js';
+import { connect, findAll, newConnection, promptBuilder } from './core.js';
 import inquirer  from "inquirer";
 
 const argv = yargs(hideBin(process.argv))
@@ -32,6 +32,9 @@ const argv = yargs(hideBin(process.argv))
         });
     }, (argv) => {
         connect(argv.name);    
+    })
+    .command('list', 'List all', (yargs) => {}, async (argv) => {
+        console.log(await findAll()); 
     })
     .demandCommand()
     .help()

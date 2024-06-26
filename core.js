@@ -69,6 +69,17 @@ export function connect(name) {
   });
 }
 
+export function findAll() {
+  return new Promise((resolve, reject) => {
+    readFile(filePath, (err, jsonData) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(jsonData);
+    });
+  })
+}
+
 export function promptBuilder(name, message) {
   return {
     type: "input",
