@@ -1,18 +1,16 @@
 {
   "name": "easy-ssh",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "main": "easy-ssh.js",
+  "author": "Antsa Fiderana",
+  "license": "MIT",
+  "description": "An easy reusable SSH client",
   "type": "module",
   "dependencies": {
     "inquirer": "^9.2.23",
     "jsonfile": "^6.1.0",
     "ssh2": "^1.15.0",
     "yargs": "^17.7.2"
-  }
+  },
+  "keywords": ["ssh","cli","easy","reusable"]
 }
